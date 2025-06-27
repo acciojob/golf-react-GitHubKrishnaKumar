@@ -26,7 +26,13 @@ class App extends Component {
 
     // bind ArrowRight keydown event
     componentDidMount() {
-      
+      const onMove = this.onMove;
+       window.addEventListener("keydown", function (e) {
+	      const key = e.key;
+	      if (key === "ArrowRight") {
+	        onMove();
+	      }
+    });
     }
 
     render() {
